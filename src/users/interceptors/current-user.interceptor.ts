@@ -13,7 +13,7 @@ export class CurrentUserInterceptor implements NestInterceptor {
   async intercept(context: ExecutionContext, next: CallHandler<any>) {
     const request = context.switchToHttp().getRequest()
 
-    const { id } = request.session
+    const id = request?.session?.id
 
     // If (user)id exists in the session object
     if (id) {
