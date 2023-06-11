@@ -1,12 +1,18 @@
-import { Injectable, NotFoundException } from "@nestjs/common"
+import {
+  Injectable,
+  NotAcceptableException,
+  NotFoundException,
+} from "@nestjs/common"
 import { Repository } from "typeorm"
 import { InjectRepository } from "@nestjs/typeorm"
 import { User } from "./user.entity"
+
 @Injectable()
 export class UsersService {
   constructor(@InjectRepository(User) private repo: Repository<User>) {}
 
   findOne(id: number) {
+    if (!id) throw new NotAcceptableException("Invalid Logout")
     return this.repo.findOneBy({
       id,
     })
