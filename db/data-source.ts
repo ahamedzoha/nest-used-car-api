@@ -27,7 +27,7 @@ const productionConfig: DataSourceOptions = {
   password: process.env.PGPASSWORD,
   port: 5432,
   ssl: {
-    rejectUnauthorized: false,
+    rejectUnauthorized: true,
   },
   entities: ["dist/**/*.entity.js"],
   migrations: ["dist/db/migrations/*.js"],
