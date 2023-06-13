@@ -1,4 +1,4 @@
-import { User } from "src/users/user.entity"
+import { User } from "../users/user.entity"
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from "typeorm"
 
 @Entity()
@@ -9,7 +9,7 @@ export class Report {
   @Column({ default: false })
   approved: boolean
 
-  @Column()
+  @Column({ type: "float" })
   price: number
 
   @Column()
@@ -21,10 +21,10 @@ export class Report {
   @Column()
   year: number
 
-  @Column()
+  @Column({ type: "float" })
   lng: number
 
-  @Column()
+  @Column({ type: "float" })
   lat: number
 
   @Column()

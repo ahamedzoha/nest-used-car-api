@@ -2,7 +2,7 @@ import { Expose } from "class-transformer"
 import { IsBoolean } from "class-validator"
 
 export class ApprovedReportDto {
-  //   @Expose()
+  @Expose()
   @IsBoolean()
   approved: boolean
 }

@@ -1,4 +1,5 @@
-import { Report } from "src/reports/report.entity"
+import { ApiHideProperty } from "@nestjs/swagger"
+import { Report } from "../reports/report.entity"
 import {
   Entity,
   Column,
@@ -14,12 +15,18 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number
 
+  @ApiHideProperty()
+  @Column({ default: true })
+  admin: boolean
+
   @Column()
   email: string
 
+  @ApiHideProperty()
   @Column()
   password: string
 
+  @ApiHideProperty()
   @OneToMany(() => Report, (report) => report.user)
   reports: Report[]
 
