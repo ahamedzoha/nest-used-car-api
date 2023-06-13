@@ -1,5 +1,5 @@
 import { ApiHideProperty } from "@nestjs/swagger"
-import { Report } from "src/reports/report.entity"
+import { Report } from "../reports/report.entity"
 import {
   Entity,
   Column,
